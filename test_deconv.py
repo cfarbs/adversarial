@@ -8,7 +8,8 @@ They are supposed to look same.
 
 
 import theano
-from adversarial.deconv import Deconv
+#from adversarial.deconv import Deconv
+from deconv import Deconv
 from pylearn2.datasets.mnist import MNIST
 from pylearn2.space import Conv2DSpace
 from pylearn2.models.mlp import MLP
@@ -49,4 +50,3 @@ for item in iter:
     pv.add_patch(res[0,:,:,0])
     pv.show()
     break
-

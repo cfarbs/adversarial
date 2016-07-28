@@ -165,11 +165,11 @@ class Deconv(Layer):
 
         for var, prefix in vars_and_prefixes:
             if not hasattr(var, 'ndim') or var.ndim != 4:
-                print "expected 4D tensor, got "
-                print var
-                print type(var)
+                print ("expected 4D tensor, got ")
+                print (var)
+                print (type(var))
                 if isinstance(var, tuple):
-                    print "tuple length: ", len(var)
+                    print ("tuple length: ", len(var))
                 assert False
             v_max = var.max(axis=(1, 2, 3))
             v_min = var.min(axis=(1, 2, 3))
@@ -381,4 +381,4 @@ def setup_deconv_detector_layer_c01b(layer, input_space, rng, irange="not specif
     self.b.name = self.layer_name + '_b'
 
     logger.info('Input shape: {0}'.format(self.input_space.shape))
-    print layer.layer_name + ' detector space: {0}'.format(self.detector_space.shape)
+    print (layer.layer_name + ' detector space: {0}'.format(self.detector_space.shape))
